@@ -19,7 +19,7 @@ async function checkFileExists(filePath) {
         try {
             core.notice("Calling our action.");
             checkFileExists("LICENSE");
-            checkFileExists("READEME.md");
+            checkFileExists("README.md");
         } catch (error) {
             core.setFailed(error.message);
         }
