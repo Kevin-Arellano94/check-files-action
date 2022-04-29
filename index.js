@@ -3,7 +3,7 @@ const github = require('@actions/github');
 const fs = require('fs');
 
 async function checkFileExists(filePath) {
-    return fs.promise.access(filePath)
+    return fs.promises.access(filePath)
     .then(() => {
         core.info(`File ${filePath} exists.`);
         return true;
@@ -15,7 +15,7 @@ async function checkFileExists(filePath) {
 }
 
 (
-    async function () {
+    async () => {
         try {
             core.notice("Calling our action.");
             checkFileExists("LICENSE");
